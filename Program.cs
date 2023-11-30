@@ -24,6 +24,7 @@ string[] NewArrayWithElementsThetLessThenThree(string[] array)
         }
     }
     string[] newArray = new string[sumOfElementsThatLessThanThree];
+
     for (int j = 0; j < sumOfElementsThatLessThanThree; j++)
     {
         for (int k = 0; k < array.Length; k++)
@@ -31,6 +32,7 @@ string[] NewArrayWithElementsThetLessThenThree(string[] array)
             if (array[k].Length <= 3)
             {
                 newArray[j] = array[k];
+                j++;
             }
         }
     }
@@ -38,6 +40,7 @@ string[] NewArrayWithElementsThetLessThenThree(string[] array)
 }
 
 string fillNewArray = string.Join(" ", NewArrayWithElementsThetLessThenThree(newArray));
+Console.WriteLine("\nМассив из символов, которые меньше либо равны 3: ");
 Console.WriteLine(fillNewArray);
 
 

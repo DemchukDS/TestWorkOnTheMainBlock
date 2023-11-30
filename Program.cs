@@ -3,12 +3,20 @@
 Console.Write("Введите количество элементов массива: ");
 int numberOfelements = Convert.ToInt32(Console.ReadLine());
 string[] newArray = new string[numberOfelements];
-for (int i = 0; i < numberOfelements; i++)
+
+string[] FillArray(string[] array, int number)
 {
-    Console.Write($"Введите {i + 1} элемент массива: ");
-    newArray[i] = Console.ReadLine();
+    for (int i = 0; i < number; i++)
+    {
+        Console.Write($"Введите {i + 1} элемент массива: ");
+        array[i] = Console.ReadLine();
+    }
+    return array;
 }
-string fillArray = string.Join(" ", newArray);
+
+string fillArray = string.Join(" ", FillArray(newArray, numberOfelements));
 Console.WriteLine(fillArray);
 
 Console.ReadKey();
+
+

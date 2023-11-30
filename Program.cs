@@ -23,7 +23,22 @@ string[] NewArrayWithElementsThetLessThenThree(string[] array)
             sumOfElementsThatLessThanThree++;
         }
     }
+    string[] newArray = new string[sumOfElementsThatLessThanThree];
+    for (int j = 0; j < sumOfElementsThatLessThanThree; j++)
+    {
+        for (int k = 0; k < array.Length; k++)
+        {
+            if (array[k].Length <= 3)
+            {
+                newArray[j] = array[k];
+            }
+        }
+    }
+    return newArray;
 }
+
+string fillNewArray = string.Join(" ", NewArrayWithElementsThetLessThenThree(newArray));
+Console.WriteLine(fillNewArray);
 
 
 Console.ReadKey();

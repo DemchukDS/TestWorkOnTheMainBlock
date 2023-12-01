@@ -13,7 +13,7 @@ string fillArray = string.Join(" ", newArray);
 Console.WriteLine("\nВведенный вами масив данных: ");
 Console.WriteLine(fillArray);
 
-string[] NewArrayWithElementsThetLessThenThree(string[] array)
+void NewArrayWithElementsThetLessThenThree(string[] array)
 {
     int sumOfElementsThatLessThanThree = 0;
     for (int i = 0; i < array.Length; i++)
@@ -24,26 +24,29 @@ string[] NewArrayWithElementsThetLessThenThree(string[] array)
         }
     }
     string[] newArray = new string[sumOfElementsThatLessThanThree];
-
-    for (int j = 0; j < sumOfElementsThatLessThanThree; j++)
+    if (sumOfElementsThatLessThanThree != 0)
     {
-        for (int k = 0; k < array.Length; k++)
+        for (int j = 0; j < sumOfElementsThatLessThanThree; j++)
         {
-            if (array[k].Length <= 3)
+            for (int k = 0; k < array.Length; k++)
             {
-                newArray[j] = array[k];
-                j++;
+                if (array[k].Length <= 3)
+                {
+                    newArray[j] = array[k];
+                    j++;
+                }
             }
         }
+        string fillNewArray = string.Join(" ", newArray);
+        Console.WriteLine("\nМассив из символов, которые меньше либо равны 3: ");
+        Console.WriteLine(fillNewArray);
     }
-    return newArray;
+    else
+    {
+        Console.WriteLine("\nНет элементов массива, количество символов в котором равно или меньше 3!");
+    }
 }
-
-string fillNewArray = string.Join(" ", NewArrayWithElementsThetLessThenThree(newArray));
-Console.WriteLine("\nМассив из символов, которые меньше либо равны 3: ");
-Console.WriteLine(fillNewArray);
-
-
+NewArrayWithElementsThetLessThenThree(newArray);
 Console.ReadKey();
 
 
